@@ -26,6 +26,7 @@ public class ChessMatch {
         return mat;
 
     }
+
     private Piece chessMove(Position source, Position target){
         Piece p =  board.removePiece(source);
         Piece capPiece = board.removePiece(target);

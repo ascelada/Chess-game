@@ -11,7 +11,7 @@ public class King extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        return new boolean[][];
+        return new boolean[0][];
     }
 
     @Override
