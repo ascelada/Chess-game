@@ -40,4 +40,10 @@ public class Board {
         piece.position= position;
 
     }
+    public Piece removePiece(Position position){
+        Piece aux = pieces[position.getRow()][position.getColumn()];
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
+
+    }
 }

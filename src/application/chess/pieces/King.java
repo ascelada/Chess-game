@@ -10,6 +10,11 @@ public class King extends ChessPiece {
     }
 
     @Override
+    public boolean[][] possibleMoves() {
+        return new boolean[][];
+    }
+
+    @Override
     public String toString(){
         return "K";
     }
