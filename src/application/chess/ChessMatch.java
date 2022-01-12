@@ -27,9 +27,10 @@ public class ChessMatch {
 
     }
 
-    private ChessPiece makeChessMove (ChessPosition sourcePosition, ChessPosition targetPosition){
+    public ChessPiece makeChessMove (ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
+
 
 
         Piece capPiece = makeMove(source,target);
@@ -47,14 +48,17 @@ public class ChessMatch {
 
     }
 
-    private boolean possibleMoves(ChessPosition sourcePosition){
+    //private boolean[][] possibleMoves(ChessPosition sourcePosition){
 
-    }
+    //return ;
+   // }
+
+
 
     private void initialSetup(){
         //PAWN
         for (int i =0; i<8; i++ ) {
-            board.placePiece(new Pawn(board, Color.WHITE), new Position(1, i));
+            //board.placePiece(new Pawn(board, Color.WHITE), new Position(1, i));
             board.placePiece(new Pawn(board, Color.BLACK), new Position(6, i));
         }
         //ROOK

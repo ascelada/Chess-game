@@ -33,6 +33,12 @@ public abstract class ChessPiece extends Piece {
         return false;
     }
 
+    public boolean isThereAOpponentPiece(Position position){
+        ChessPiece p = (ChessPiece)getBoard().piece(position);
+
+        return p!=null && p.getColor() != color;
+    }
+
 }
 
 

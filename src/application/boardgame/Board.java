@@ -1,5 +1,8 @@
 package application.boardgame;
 
+import application.chess.ChessPiece;
+import application.chess.Color;
+
 public class Board {
      private int rows;
      private int columns;
@@ -46,4 +49,14 @@ public class Board {
         return aux;
 
     }
+    public boolean positionExists(Position position){
+        return position.getRow()>=0 && position.getColumn() >=0
+                && position.getRow()<rows && position.getColumn() <columns;
+
+    }
+    public boolean isThereAPiece(Position position){
+        return piece(position) != null;
+
+    }
+
 }
