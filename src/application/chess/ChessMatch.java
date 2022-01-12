@@ -27,13 +27,30 @@ public class ChessMatch {
 
     }
 
-    private Piece chessMove(Position source, Position target){
+    private ChessPiece makeChessMove (ChessPosition sourcePosition, ChessPosition targetPosition){
+        Position source = sourcePosition.toPosition();
+        Position target = targetPosition.toPosition();
+
+
+        Piece capPiece = makeMove(source,target);
+
+        return (ChessPiece) capPiece;
+
+    }
+
+
+    private Piece makeMove(Position source, Position target){
         Piece p =  board.removePiece(source);
         Piece capPiece = board.removePiece(target);
         board.placePiece(p,target);
         return capPiece;
 
     }
+
+    private boolean possibleMoves(ChessPosition sourcePosition){
+
+    }
+
     private void initialSetup(){
         //PAWN
         for (int i =0; i<8; i++ ) {
