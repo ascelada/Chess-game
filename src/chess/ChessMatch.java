@@ -1,9 +1,9 @@
-package application.chess;
+package chess;
 
-import application.boardgame.Board;
-import application.boardgame.Piece;
-import application.boardgame.Position;
-import application.chess.pieces.*;
+import boardgame.Board;
+import boardgame.Piece;
+import boardgame.Position;
+import chess.pieces.*;
 
 import java.util.ArrayList;
 import java.util.List;

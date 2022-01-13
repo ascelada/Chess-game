@@ -1,4 +1,4 @@
-package application.chess;
+package chess;
 
 
 

@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import application.chess.ChessMatch;
-import application.chess.ChessPiece;
-import application.chess.ChessPosition;
-import application.chess.Color;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
+import chess.Color;
 
 public class UI {
 

@@ -1,8 +1,8 @@
 package application;
 
-import application.chess.ChessMatch;
-import application.chess.ChessPiece;
-import application.chess.ChessPosition;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
 
 
 import java.util.ArrayList;
