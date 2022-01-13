@@ -35,13 +35,15 @@ public class ChessMatch {
 
         Piece capPiece = makeMove(source,target);
 
+
         return (ChessPiece) capPiece;
 
     }
 
 
     private Piece makeMove(Position source, Position target){
-        Piece p =  board.removePiece(source);
+        ChessPiece p = (ChessPiece) board.removePiece(source);
+        p.increaseMoveCount();
         Piece capPiece = board.removePiece(target);
         board.placePiece(p,target);
         return capPiece;

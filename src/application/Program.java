@@ -16,6 +16,8 @@ public class Program {
         UI.printBoard(chessMatch.getPieces());
         System.out.print("Source position: ");
         ChessPosition source = new ChessPosition(sc.next().charAt(0),sc.nextInt());
+
+
         System.out.println();
         System.out.print("Target position: ");
         ChessPosition target = new ChessPosition(sc.next().charAt(0),sc.nextInt());
