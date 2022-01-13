@@ -107,6 +107,7 @@ public class ChessMatch {
             board.placePiece(capPiece,target);
         }
 
+
     }
     private Color opponent(Color color){
 
@@ -153,6 +154,7 @@ public class ChessMatch {
                         boolean testCheck = testCheck(color);
 
                         undoMove(source,target,capturedPiece);
+                        ((ChessPiece) p).decreaseMoveCount();
                         if(!testCheck){
                             return false;
                         }
