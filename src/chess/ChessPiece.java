@@ -20,31 +20,31 @@ public abstract class ChessPiece extends Piece {
     public abstract boolean[][] possibleMoves();
 
 
-
-
-    public ChessPosition getChessPosition(){
+    public ChessPosition getChessPosition() {
         return ChessPosition.fromPosition(position);
     }
 
-    protected boolean isThereAOpponentPiece(Position position){
-        ChessPiece p = (ChessPiece)getBoard().piece(position);
-
-        return p!=null && p.getColor() != color;
-    }
-    protected boolean canMove(Position position){
+    protected boolean isThereAOpponentPiece(Position position) {
         ChessPiece p = (ChessPiece) getBoard().piece(position);
-        return p==null || p.getColor()!=color;
+
+        return p != null && p.getColor() != color;
+    }
+
+    protected boolean canMove(Position position) {
+        ChessPiece p = (ChessPiece) getBoard().piece(position);
+        return p == null || p.getColor() != color;
     }
 
     public int getMoveCount() {
         return moveCount;
     }
 
-    protected void increaseMoveCount(){
+    protected void increaseMoveCount() {
         moveCount++;
 
     }
-    protected void decreaseMoveCount(){
+
+    protected void decreaseMoveCount() {
         moveCount--;
 
     }

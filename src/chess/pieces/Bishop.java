@@ -14,52 +14,52 @@ public class Bishop extends ChessPiece {
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
-        Position p = new Position(0,0);
+        Position p = new Position(0, 0);
 
         //UP-RIGHT
 
-        p.setValues(position.getRow()+1,position.getColumn()+1);
+        p.setValues(position.getRow() + 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()+1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() + 1, position.getColumn() + 1);
 
 
         }
 
         //UP-LEFT
 
-        p.setValues(position.getRow()-1,position.getColumn()+1);
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
 
         }
 
         //DOWN- LEFT
 
-        p.setValues(position.getRow()-1,position.getColumn()-1);
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()-1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() - 1);
 
 
         }
 
         //DOWN- RIGHT
 
-        p.setValues(position.getRow()-1,position.getColumn()+1);
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
 
         }
@@ -69,7 +69,7 @@ public class Bishop extends ChessPiece {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "B";
     }
 }

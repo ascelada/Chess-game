@@ -15,16 +15,16 @@ public class Queen extends ChessPiece {
 
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
-        Position p = new Position(0,0);
+        Position p = new Position(0, 0);
 
         //UP-RIGHT
 
-        p.setValues(position.getRow()+1,position.getColumn()+1);
+        p.setValues(position.getRow() + 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()+1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() + 1, position.getColumn() + 1);
 
 
         }
@@ -32,12 +32,12 @@ public class Queen extends ChessPiece {
 
         //UP-LEFT
 
-        p.setValues(position.getRow()-1,position.getColumn()+1);
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
 
         }
@@ -45,67 +45,67 @@ public class Queen extends ChessPiece {
 
         //DOWN- LEFT
 
-        p.setValues(position.getRow()-1,position.getColumn()-1);
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()-1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() - 1);
 
 
         }
 
         //DOWN- RIGHT
 
-        p.setValues(position.getRow()-1,position.getColumn()+1);
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
-        while (getBoard().positionExists(p) && canMove(p)){
+        while (getBoard().positionExists(p) && canMove(p)) {
 
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setValues(position.getRow()-1,position.getColumn()+1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
 
         }
 
 
         //ABOVE
-        p.setValues(position.getRow()-1,position.getColumn());
+        p.setValues(position.getRow() - 1, position.getColumn());
 
-        while( getBoard().positionExists(p) && canMove(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setRow(p.getRow()-1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setRow(p.getRow() - 1);
 
         }
 
 
         //BELLOW
-        p.setValues(position.getRow()+1,position.getColumn());
+        p.setValues(position.getRow() + 1, position.getColumn());
 
-        while( getBoard().positionExists(p) && canMove(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setRow(p.getRow()+1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setRow(p.getRow() + 1);
 
         }
 
 
         //RIGHT
 
-        p.setValues(position.getRow(),position.getColumn()+1);
+        p.setValues(position.getRow(), position.getColumn() + 1);
 
-        while( getBoard().positionExists(p) && canMove(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setColumn(p.getColumn()+1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setColumn(p.getColumn() + 1);
 
         }
 
 
         //LEFT
 
-        p.setValues(position.getRow(),position.getColumn()-1);
+        p.setValues(position.getRow(), position.getColumn() - 1);
 
-        while( getBoard().positionExists(p) && canMove(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-            p.setColumn(p.getColumn()-1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setColumn(p.getColumn() - 1);
 
         }
 
@@ -115,7 +115,7 @@ public class Queen extends ChessPiece {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Q";
     }
 }

@@ -6,7 +6,6 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -46,14 +45,12 @@ public class Program {
 
 
                 }
-            }
-            catch (ChessException e){
+            } catch (ChessException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
 
 
-            }
-            catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }

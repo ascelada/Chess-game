@@ -14,20 +14,20 @@ public class King extends ChessPiece {
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
-        Position p = new Position(0,0);
+        Position p = new Position(0, 0);
 
-        for (int i = -1; i <=1 ; i++) {
-            for (int j = -1; j <=1 ; j++) {
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
 
 
-                if(i==0 && j==0){
+                if (i == 0 && j == 0) {
                     continue;
                 }
 
-                p.setValues(position.getRow()+i,position.getColumn()+j);
-                if (getBoard().positionExists(p) && canMove(p)){
+                p.setValues(position.getRow() + i, position.getColumn() + j);
+                if (getBoard().positionExists(p) && canMove(p)) {
 
-                    mat[p.getRow()][p.getColumn()]= true;
+                    mat[p.getRow()][p.getColumn()] = true;
 
                 }
 
@@ -39,11 +39,8 @@ public class King extends ChessPiece {
     }
 
 
-
-
-
     @Override
-    public String toString(){
+    public String toString() {
         return "K";
     }
 }
