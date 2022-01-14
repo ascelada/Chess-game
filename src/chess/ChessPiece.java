@@ -31,6 +31,10 @@ public abstract class ChessPiece extends Piece {
 
         return p!=null && p.getColor() != color;
     }
+    protected boolean canMove(Position position){
+        ChessPiece p = (ChessPiece) getBoard().piece(position);
+        return p==null || p.getColor()!=color;
+    }
 
     public int getMoveCount() {
         return moveCount;

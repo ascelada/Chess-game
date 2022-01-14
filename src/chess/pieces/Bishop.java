@@ -20,59 +20,48 @@ public class Bishop extends ChessPiece {
 
         p.setValues(position.getRow()+1,position.getColumn()+1);
 
-        while (getBoard().positionExists(p) && !getBoard().isThereAPiece(p)){
+        while (getBoard().positionExists(p) && canMove(p)){
 
             mat[p.getRow()][p.getColumn()]= true;
             p.setValues(position.getRow()+1,position.getColumn()+1);
 
 
         }
-        if (getBoard().positionExists(p) && isThereAOpponentPiece(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-        }
 
         //UP-LEFT
 
         p.setValues(position.getRow()-1,position.getColumn()+1);
 
-        while (getBoard().positionExists(p) && !getBoard().isThereAPiece(p)){
+        while (getBoard().positionExists(p) && canMove(p)){
 
             mat[p.getRow()][p.getColumn()]= true;
             p.setValues(position.getRow()-1,position.getColumn()+1);
 
 
-        }
-        if (getBoard().positionExists(p) && isThereAOpponentPiece(p)){
-            mat[p.getRow()][p.getColumn()]= true;
         }
 
         //DOWN- LEFT
 
         p.setValues(position.getRow()-1,position.getColumn()-1);
 
-        while (getBoard().positionExists(p) && !getBoard().isThereAPiece(p)){
+        while (getBoard().positionExists(p) && canMove(p)){
 
             mat[p.getRow()][p.getColumn()]= true;
             p.setValues(position.getRow()-1,position.getColumn()-1);
 
 
         }
-        if (getBoard().positionExists(p) && isThereAOpponentPiece(p)){
-            mat[p.getRow()][p.getColumn()]= true;
-        }
+
         //DOWN- RIGHT
 
         p.setValues(position.getRow()-1,position.getColumn()+1);
 
-        while (getBoard().positionExists(p) && !getBoard().isThereAPiece(p)){
+        while (getBoard().positionExists(p) && canMove(p)){
 
             mat[p.getRow()][p.getColumn()]= true;
             p.setValues(position.getRow()-1,position.getColumn()+1);
 
 
-        }
-        if (getBoard().positionExists(p) && isThereAOpponentPiece(p)){
-            mat[p.getRow()][p.getColumn()]= true;
         }
 
         return mat;
