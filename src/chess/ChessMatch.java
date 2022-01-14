@@ -63,9 +63,12 @@ public class ChessMatch {
     public ChessPiece makeChessMove (ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
+        validateSourcePosition(source);
+        validateTargetPosition(source,target);
 
 
         Piece capPiece = makeMove(source,target);
+
         if (testCheck(currentPlayer)){
             undoMove(source,target,capPiece);
             throw new ChessException("You cant put yourself in check!!");
@@ -102,6 +105,7 @@ public class ChessMatch {
     private void undoMove(Position source,Position target, Piece capPiece){
         Piece p = board.removePiece(target);
         board.placePiece(p,source);
+        ((ChessPiece) p).decreaseMoveCount();
 
         if (capPiece != null){
             board.placePiece(capPiece,target);
@@ -154,7 +158,7 @@ public class ChessMatch {
                         boolean testCheck = testCheck(color);
 
                         undoMove(source,target,capturedPiece);
-                        ((ChessPiece) p).decreaseMoveCount();
+
                         if(!testCheck){
                             return false;
                         }
@@ -170,6 +174,23 @@ public class ChessMatch {
         Position position  =sourcePosition.toPosition();
         return board.piece(position).possibleMoves();
 
+    }
+    private void validateSourcePosition(Position position){
+        if(!board.isThereAPiece(position)){
+            throw new ChessException("There is no piece on source!");
+        }
+        if(currentPlayer != ((ChessPiece)board.piece(position)).getColor()){
+            throw new ChessException("The chosen piece is not yours");
+        }
+        if (!board.piece(position).anyPossibleMove()){
+            throw new ChessException("There isnt any possible move for the current piece!");
+        }
+
+    }
+    private void validateTargetPosition(Position source, Position target){
+        if(!board.piece(source).possibleMove(target)){
+            throw new ChessException("The piece cant move to target!!");
+        }
     }
 
     private void nextTurn(){
