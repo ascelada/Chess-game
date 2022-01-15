@@ -24,7 +24,7 @@ public class Queen extends ChessPiece {
         while (getBoard().positionExists(p) && canMove(p)) {
 
             mat[p.getRow()][p.getColumn()] = true;
-            p.setValues(position.getRow() + 1, position.getColumn() + 1);
+            p.setValues(p.getRow() + 1, p.getColumn() + 1);
 
 
         }
@@ -37,7 +37,7 @@ public class Queen extends ChessPiece {
         while (getBoard().positionExists(p) && canMove(p)) {
 
             mat[p.getRow()][p.getColumn()] = true;
-            p.setValues(position.getRow() - 1, position.getColumn() + 1);
+            p.setValues(p.getRow() - 1, p.getColumn() + 1);
 
 
         }
@@ -50,7 +50,7 @@ public class Queen extends ChessPiece {
         while (getBoard().positionExists(p) && canMove(p)) {
 
             mat[p.getRow()][p.getColumn()] = true;
-            p.setValues(position.getRow() - 1, position.getColumn() - 1);
+            p.setValues(p.getRow() - 1, p.getColumn() - 1);
 
 
         }
@@ -62,7 +62,7 @@ public class Queen extends ChessPiece {
         while (getBoard().positionExists(p) && canMove(p)) {
 
             mat[p.getRow()][p.getColumn()] = true;
-            p.setValues(position.getRow() - 1, position.getColumn() + 1);
+            p.setValues(p.getRow() - 1, p.getColumn() + 1);
 
 
         }
